@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo3.css">
+    <title>Estorno de Pagamento</title>
+    <style>
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Banco Central do Brasil</h1>
+    <p>Preencha os campos abaixo:</p>
+
+    <label for="transacaoId">ID da Transação:</label>
+    <input type="text" id="transacaoId" placeholder="Insira o ID da Transação"><br>
+
+    <div class="input-container">
+        <label for="estorno">Valor a Estornar:</label>
+        <input type="text" id="estorno" placeholder="Insira o Valor a Estornar">
+    </div>
+
+    <button onclick="realizarEstorno()">Estornar</button>
+
+    <div id="mensagem"></div>
+
+    <script>
+        function realizarEstorno() {
+            const transacaoId = document.getElementById("transacaoId").value;
+            const estorno = document.getElementById("estorno").value;
+
+            if (!transacaoId || !estorno) {
+                document.getElementById("mensagem").innerHTML = "Por favor, preencha ambos os campos.";
+                return;
+            }
+
+            // Simular um processo de estorno (substitua esta parte com sua lógica real)
+            setTimeout(function() {
+                document.getElementById("mensagem").innerHTML = "Estorno realizado com sucesso. Aguarde de 3-5 dias úteis para processamento.";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
