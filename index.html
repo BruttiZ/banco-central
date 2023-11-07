@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <head>
+        <title>Banco Central do Brasil</title>
+    </head>
+    <body>
+        <h1>Banco Central do Brasil</h1>
+        <form id="form">
+            <label for="cartao">Número do Cartão:</label>
+            <input type="text" id="cartao" name="cartao" required>
+            <br>
+            <label for="transacao">ID da Transação:</label>
+            <input type="text" id="transacao" name="transacao" readonly>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="resultado"></div>
+        <script>
+            const form = document.getElementById("form");
+            const resultado = document.getElementById("resultado");
+            const cartaoInput = document.getElementById("cartao");
+            const transacaoInput = document.getElementById("transacao");
+        
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const cartao = cartaoInput.value;
+        
+                const transacao = Math.floor(Math.random() * 1000000);
+        
+                transacaoInput.value = transacao;
+        
+                if (cartao.trim() !== "") {
+                    resultado.textContent = "Sucesso";
+                } else {
+                    resultado.textContent = "Preencha o campo do cartão.";
+                }
+            });
+        </script>
+        
+    </body>
+    </html>
+    
+
