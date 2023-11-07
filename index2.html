@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Central do Brasil</title>
+    <link rel="stylesheet" type="text/css" href="estilo2.css">
+</head>
+<body>
+    <h1>Banco Central do Brasil</h1>
+    <form id="form">
+        <label for="transacao">ID da Transação:</label>
+        <input type="text" id="transacao" name="transacao">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="resultado"></div>
+    <div id="mensagem"></div>
+
+    <script>
+        const form = document.getElementById("form");
+        const resultado = document.getElementById("resultado");
+        const transacaoInput = document.getElementById("transacao");
+        const mensagem = document.getElementById("mensagem");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const transacao = transacaoInput.value;
+
+            if (transacao.trim() !== "") {
+                resultado.textContent = "Sucesso";
+                mensagem.textContent = "Aguarde 3-5 dias úteis";
+            } else {
+                resultado.textContent = "";
+                mensagem.textContent = "Por favor, insira um ID de Transação válido.";
+            }
+        });
+    </script>
+</body>
+</html>
